@@ -1,0 +1,28 @@
+{
+  "name": "@codersrank/education",
+  "version": "0.9.7",
+  "description": "Codersrank Education Widget",
+  "main": "cjs/codersrank-education.js",
+  "module": "esm/codersrank-education.js",
+  "jsnext:main": "esm/codersrank-education.js",
+  "browser": "codersrank-education.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codersrank-org/education-widget.git"
+  },
+  "author": "CodersRank Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codersrank-org/education-widget/issues"
+  },
+  "homepage": "https://github.com/codersrank-org/education-widget#readme",
+  "keywords": [
+    "codersrank",
+    "work",
+    "experience",
+    "jobs",
+    "profile",
+    "cv",
+    "web component"
+  ]
+}

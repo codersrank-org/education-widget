@@ -1,0 +1,180 @@
+:host {
+  --preloader-color: #72a0a8;
+
+  --item-spacing: 1em;
+  --item-border-radius: 0px;
+  --item-border: none;
+  --item-padding: 0px;
+  --item-bg-color: transparent;
+  --grid-columns: 1;
+
+  --title-font-size: 1.15em;
+  --title-font-weight: bold;
+  --title-text-color: inherit;
+  --title-opacity: 1;
+
+  --details-text-color: inherit;
+  --details-opacity: 1;
+  --details-font-size: inherit;
+  --details-font-weight: inherit;
+
+  --date-text-color: inherit;
+  --date-opacity: 0.55;
+  --date-font-size: inherit;
+  --date-font-weight: inherit;
+
+  --description-font-size: inherit;
+  --description-font-weight: inherit;
+  --description-text-color: inherit;
+  --description-opacity: 1;
+
+  --section-title-text-color: inherit;
+  --section-title-opacity: 1;
+  --section-title-font-size: 1.5em;
+  --section-title-font-weight: bold;
+
+  --certificate-link-font-size: 0.85em;
+  --certificate-link-font-weight: inherit;
+  --certificate-link-opacity: 1;
+  --certificate-link-text-color: #72a0a8;
+  --certificate-link-text-decoration: none;
+  --certificate-link-text-transform: uppercase;
+  --certificate-link-hover-text-decoration: underline;
+  /*
+  --certificate-link-hover-text-color
+  --certificate-link-active-text-color
+  --certificate-link-active-text-decoration
+  */
+
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.codersrank-education {
+  position: relative;
+  &-loading {
+    height: 100px;
+  }
+  &-preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    border: 3px solid var(--preloader-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: preloader 1s infinite linear;
+  }
+
+  ul,
+  &-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul + ul {
+    margin-top: var(--item-spacing);
+  }
+
+  li + li {
+    margin-top: var(--item-spacing);
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    column-gap: var(--item-spacing);
+    row-gap: var(--item-spacing);
+    li + li {
+      margin: 0;
+    }
+  }
+
+  &-item {
+    border-radius: var(--item-border-radius);
+    border: var(--item-border);
+    padding: var(--item-padding);
+    background-color: var(--item-bg-color);
+  }
+  &-content {
+    min-width: 0;
+    width: 100%;
+    flex-shrink: 10;
+  }
+
+  &-title {
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    color: var(--title-text-color);
+    opacity: var(--title-opacity);
+  }
+  &-date {
+    font-size: var(--date-font-size);
+    font-weight: var(--date-font-weight);
+    color: var(--date-text-color);
+    opacity: var(--date-opacity);
+  }
+  &-details {
+    font-size: var(--details-font-size);
+    font-weight: var(--details-font-weight);
+    color: var(--details-text-color);
+    opacity: var(--details-opacity);
+  }
+
+  &-description {
+    font-size: var(--description-font-size);
+    font-weight: var(--description-font-weight);
+    color: var(--description-text-color);
+    opacity: var(--description-opacity);
+  }
+  &-certificate-link {
+    a {
+      font-size: var(--certificate-link-font-size);
+      font-weight: var(--certificate-link-font-weight);
+      color: var(--certificate-link-text-color);
+      opacity: var(--certificate-link-opacity);
+      text-decoration: var(--certificate-link-text-decoration);
+      text-transform: var(--certificate-link-text-transform);
+      &:hover {
+        text-decoration: var(--certificate-link-hover-text-decoration);
+        color: var(
+          --certificate-link-hover-text-color,
+          var(--certificate-link-text-color)
+        );
+      }
+      &:active {
+        text-decoration: var(
+          --certificate-link-active-text-decoration,
+          var(--certificate-link-hover-text-decoration)
+        );
+        color: var(
+          --certificate-link-active-text-color,
+          var(--certificate-link-hover-text-color, var(--certificate-link-text-color))
+        );
+      }
+    }
+  }
+  &-section-title {
+    font-size: var(--section-title-font-size);
+    font-weight: var(--section-title-font-weight);
+    color: var(--section-title-text-color);
+    opacity: var(--section-title-opacity);
+    margin: 0.85em 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@keyframes preloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
