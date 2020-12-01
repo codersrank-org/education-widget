@@ -132,6 +132,14 @@ class CodersrankEducation extends HTMLElement {
     this.setAttribute('certificates-section-title', value);
   }
 
+  get branding() {
+    return this.getAttribute('branding') !== 'false';
+  }
+
+  set branding(value) {
+    this.setAttribute('branding', value);
+  }
+
   render() {
     const {
       username,
@@ -146,6 +154,7 @@ class CodersrankEducation extends HTMLElement {
       certificateLinkText,
       educationSectionTitle,
       certificatesSectionTitle,
+      branding,
     } = this;
     const ctx = {
       data,
@@ -156,6 +165,7 @@ class CodersrankEducation extends HTMLElement {
       certificateLinkText,
       educationSectionTitle,
       certificatesSectionTitle,
+      branding,
     };
 
     if (!username || !mounted) return;

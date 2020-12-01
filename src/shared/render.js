@@ -1,3 +1,5 @@
+import { codersrRankLogo } from './codersrank-logo';
+
 export const render = ({
   data: { education = [], certificates = [] },
   grid,
@@ -8,6 +10,7 @@ export const render = ({
   certificationLinkText,
   educationSectionTitle,
   certificatesSectionTitle,
+  branding,
 } = {}) => {
   const formatDate = (date) => {
     if (!date) return '';
@@ -102,6 +105,14 @@ export const render = ({
         </li>
         `).join('')}
       </ul>
+      ` : ''}
+      ${branding ? /* html */`
+      <div class="codersrank-education-branding">
+        <a href="https://codersrank.io" target="_blank" rel="noopener noreferrer">
+          <span>Powered by </span>
+          ${codersrRankLogo}
+        </a>
+      </div>
       ` : ''}
     </div>
   `;
