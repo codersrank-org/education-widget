@@ -112,6 +112,7 @@ There are following CSS Custom Properties are available:
 | `--certificate-link-hover-text-color`       | -             |
 | `--certificate-link-active-text-color`      | -             |
 | `--certificate-link-active-text-decoration` | -             |
+| `--branding-text-color`                     | `inherit`     |
 
 For example, to change education (and certificate) item title color to `purple` and font-size to `20px`, add this to CSS stylesheet:
 
