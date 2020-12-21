@@ -1,6 +1,6 @@
 {
   "name": "@codersrank/education",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "description": "Codersrank Education Widget",
   "main": "cjs/codersrank-education.js",
   "module": "esm/codersrank-education.js",

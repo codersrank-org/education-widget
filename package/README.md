@@ -57,6 +57,7 @@ Widget supports following properties as HTML element attributes:
 | `certificates-link`          | `string`  | `See certification` | Certificate link text                                                                     |
 | `education-section-title`    | `string`  | ``                  | Education section title                                                                   |
 | `certificates-section-title` | `string`  | ``                  | Certificates section title                                                                |
+| `branding`                   | `boolean` | `true`              | Displays "Powered by CodersRank" link                                                     |
 
 For example:
 
