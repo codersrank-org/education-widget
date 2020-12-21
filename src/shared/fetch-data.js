@@ -3,20 +3,17 @@ const cache = {};
 const fetchEducation = (username) => {
   if (cache[username] && cache[username].education)
     return Promise.resolve(cache[username].education);
-  return fetch(
-    `https://grpcgateway.codersrank.io/account/education?username=${username}`,
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+  return fetch(`https://api.codersrank.io/v2/users/${username}/education`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  )
+  })
     .then((res) => res.json())
     .then((data) => {
       if (!cache[username]) cache[username] = {};
-      cache[username].education = data;
-      return data;
+      cache[username].education = data.education;
+      return data.education;
     })
     .catch((err) => {
       // eslint-disable-next-line
@@ -28,20 +25,17 @@ const fetchCertificates = (username) => {
   if (cache[username] && cache[username].certificates)
     return Promise.resolve(cache[username].certificates);
 
-  return fetch(
-    `https://grpcgateway.codersrank.io/candidate/candidate/Certificate?username=${username}`,
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+  return fetch(`https://api.codersrank.io/v2/users/${username}/certificates`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
     },
-  )
+  })
     .then((res) => res.json())
     .then((data) => {
       if (!cache[username]) cache[username] = {};
-      cache[username].certificates = data;
-      return data;
+      cache[username].certificates = data.certificates;
+      return data.certificates;
     })
     .catch((err) => {
       // eslint-disable-next-line

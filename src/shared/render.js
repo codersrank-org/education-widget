@@ -19,10 +19,10 @@ export const render = ({
   };
 
   const dates = (item) => {
-    const startDate = formatDate(item.startDate || item.dateFrom);
-    const endDate = item.currentlyStudyingHere
+    const startDate = formatDate(item.start_date || item.date_from);
+    const endDate = item.is_current
       ? 'Present'
-      : formatDate(item.endDate || item.dateTo);
+      : formatDate(item.end_date || item.date_to);
     return `${startDate} - ${endDate}`;
   };
 
@@ -40,15 +40,15 @@ export const render = ({
       <ul ${grid ? 'class="codersrank-education-grid"' : ''}>
         ${education.map((item) => /* html */`
         <li class="codersrank-education-item">
-            ${item.school ? /* html */`
+            ${item.name ? /* html */`
             <div class="codersrank-education-title">
-              ${ item.school }
+              ${ item.name }
             </div>
             ` : ''}
 
-            ${item.degree || item.field ? /* html */`
+            ${item.degree || item.field_of_study ? /* html */`
             <div class="codersrank-education-details">
-              ${ [item.degree, item.field].filter((el) => !!el).join(', ') }
+              ${ [item.degree, item.field_of_study].filter((el) => !!el).join(', ') }
             </div>
             ` : ''}
 
